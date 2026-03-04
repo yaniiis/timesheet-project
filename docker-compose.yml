@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=timesheetdb
+    volumes:
+      - timesheetvol:/var/lib/mysql
+
+  timesheet-app:
+    image: timesheet-yanis-isep5
+    container_name: timesheet-container
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql
+
+volumes:
+  timesheetvol:
