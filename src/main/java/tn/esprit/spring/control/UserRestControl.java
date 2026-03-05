@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import tn.esprit.spring.entities.User;
 import tn.esprit.spring.services.IUserService;
 
-// userRestControl
 @RestController // = @Controller + @ResponseBody 
 @RequestMapping("/user")
 public class UserRestControl {
